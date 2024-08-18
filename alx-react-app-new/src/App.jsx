@@ -1,36 +1,9 @@
-<<<<<<< HEAD
-
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './components/Home';
-import About from './components/About';
-import Services from './components/Services';
-import Contact from './components/Contact';
-import Navbar from './components/Navbar';
-import './App.css';
-
-function App() {
-  return (
-    <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-    </Router>
-  );
-}
-
-export default App;
-
-=======
 import { useState } from 'react'
-import WelcomeMessage from './WelcomeMessage';
 import Header from './Header';,
 import MainContent from './MainContent';, 
 import Footer from './Footer';
 import UserProfile from './components/UserProfile';
+import Counter from './components/Counter';
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -49,8 +22,7 @@ function App() {
         </a>
       </div>
       <h1>Vite + React</h1>
-      <WelcomeMessage />
-      <Header />
+        <Header />
       <MainContent />  
       <UserProfile 
         name="Alice" 
@@ -74,4 +46,3 @@ function App() {
 }
 
 export default App
->>>>>>> c7239adf4327945ded8ca9d8eb5e4f62950066d0
