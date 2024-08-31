@@ -1,21 +1,22 @@
-// src/components/RecipeList.jsx
-import useRecipeStore from '../recipeStore'; // Adjust the path if necessary
+import React, { useEffect } from 'react';
+import useRecipeStore from './recipeStore';
 
 const RecipeList = () => {
-  const recipes = useRecipeStore(state => state.recipes);
+  const recipes = useRecipeStore(state => state.filteredRecipes);
+  const filterRecipes = useRecipeStore(state => state.filterRecipes);
+
+  useEffect(() => {
+    filterRecipes(); // Update filtered recipes whenever the search term changes
+  }, [filterRecipes]);
 
   return (
     <div>
-      {recipes.length === 0 ? (
-        <p>No recipes available.</p>
-      ) : (
-        recipes.map(recipe => (
-          <div key={recipe.id}>
-            <h3>{recipe.title}</h3>
-            <p>{recipe.description}</p>
-          </div>
-        ))
-      )}
+      {recipes.map(recipe => (
+        <div key={recipe.id}>
+          <h3>{recipe.title}</h3>
+          <p>{recipe.description}</p>
+        </div>
+      ))}
     </div>
   );
 };
